@@ -1,0 +1,79 @@
+.navbar-brand-out {
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(236, 236, 185);
+  color: navy;
+  text-decoration: none;
+  font-size: 25px;
+  position: absolute;
+  border-style: solid;
+  border-color: black;
+  top: 25px;
+  margin-left: 20px;
+  z-index: 10;
+  font-family:Pacifico;
+}
+
+.navbar-brand {
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(236, 236, 185);
+  color: navy;
+  text-decoration: none;
+  font-size: 25px;
+  border-style: solid;
+  border-color: black;
+  font-family: Pacifico;
+}
+
+.navbar-items {
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  color: black;
+  font-family: Fuzzy Bubbles;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a.active {
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+nav a.active:hover {
+  color: navy !important;
+}
+
+nav a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: navy;
+}
+
+nav a.active.navbar-brand {
+  border-bottom: none;
+  font-weight:bold;
+}
+
+nav a:not(.navbar-brand):hover {
+  font-weight: bold;
+  color: navy;
+}
+
+.navbarToggler {
+  background-image: url("../../public/hamburger.svg") !important;
+}
+
+.dropdown:hover {
+  font-weight:bold;
+}
+

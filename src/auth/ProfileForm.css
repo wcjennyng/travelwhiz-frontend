@@ -1,0 +1,31 @@
+/* @media screen and (max-width: 700px) { */
+
+    .ProfileForm {
+        height: calc(100vh - 100px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 70px;
+        position: relative;
+        max-width: 700px;
+    }
+
+
+
+
+/* } */
+
+.profilePage {
+    background-image: url("https://images.pexels.com/photos/139366/pexels-photo-139366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+
+}

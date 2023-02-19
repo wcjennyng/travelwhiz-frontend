@@ -1,0 +1,38 @@
+a.active:hover {
+    color: lightgreen !important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: lightgreen;
+}
+
+a.active.navbar-brand {
+    border-bottom: none;
+}
+
+a:not(.navbar-brand):hover {
+    font-weight: bold;
+}
+
+.carousel {
+    margin-top: 157px;
+}
+
+h1 {
+    font-family: Pacifico;
+    font-size:90px;
+}
+
+.greeting {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: Pacifico;
+  margin-top: 25px;
+  padding-top: 5px;
+  text-shadow: 2px 2px navy;
+  font-size: 35px;
+}
+
+

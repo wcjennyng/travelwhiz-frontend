@@ -1,0 +1,59 @@
+h3 {
+    font-family: Fuzzy Bubbles;
+}
+
+label {
+    border-bottom: 0.5px solid black;
+    margin-bottom: .5px;
+    width: max-content;
+    margin: 3px 0;
+    font-weight: bold;
+}
+
+.deleteIcon:hover {
+    color: red;
+}
+
+.editIcon:hover {
+    color:green;
+}
+
+.savedPage {
+    background-image: url("https://images.pexels.com/photos/139366/pexels-photo-139366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    position: absolute;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    
+}
+
+.savedContainer {
+    position: relative;
+    margin-top: 100px;
+}
+
+.searching {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.searching:hover {
+    color: navy;
+}
+
+.sectionTitle {
+    color: white;
+    text-shadow: 2px 2px navy;
+    font-family: Pacifico;
+    font-size: 30px;
+}
+
+
+

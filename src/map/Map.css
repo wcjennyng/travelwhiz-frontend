@@ -1,0 +1,105 @@
+label {
+    font-family: Fuzzy Bubbles;
+    
+}
+
+.rounded-rect {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 50px -25px black;
+}
+
+.flex-center {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center.left {
+    left: 0px;
+}
+
+
+
+.sidebar-content {
+    position: absolute;
+    width: 95%;
+    height: 97%;
+    font-size: 15px;
+    color: navy;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    width: 2.6em;
+    height: 2.6em;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-toggle.left {
+    right: -2.05em;
+}
+
+
+.sidebar-toggle:hover {
+    color: rgb(239, 220, 44);
+    cursor: pointer;
+}
+
+.sidebar {
+    transition: transform 1s;
+    z-index: 1;
+    width: 300px;
+    height: 50%;
+    top: 80px;
+    margin-left: 5px;
+}
+
+.components {
+    position: relative;
+    left: 30px;
+    top: -15px;
+}
+
+.or {
+    position: relative;
+    left: 30%;
+}
+
+/*
+    The sidebar styling has them "expanded" by default, we use CSS transforms to push them offscreen
+    The toggleSidebar() function removes this class from the element in order to expand it.
+    */
+.left.collapsed {
+    transform: translateX(-295px);
+}
+
+.popup {
+    width: 225px;
+    height: 400px;
+}
+
+.review {
+    overflow: auto;
+}
+
+.editIcon:hover {
+    color: green;
+}
+
+.deleteIcon:hover {
+    color: red;
+}
+
+
+.editForm {
+    position: relative;
+    left: 20px;
+}
+
+
+

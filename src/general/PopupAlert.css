@@ -1,0 +1,68 @@
+.popup-content {
+    background-color: lightslategray;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px #999;
+    padding: 20px;
+}
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid white;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+}
+
+.content {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 5px;
+    
+}
+
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 3px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid;
+    border-color: lightgray
+}
+
+.close:focus {
+    outline: none;
+}
+
+.cancelButton {
+    color: white;
+    background-color: red;
+    border-radius: 3px;
+    border: none;
+
+}
+
+.cancelButton:hover {
+    color: lightgray;
+}
+
+.okButton {
+    color: white;
+    background-color: lightgreen;
+    border-radius: 3px;
+    border: none;
+    margin-left: 3px;
+}
+
+.okButton:hover {
+    color: lightgray;
+}
+
+
