@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001" || "http://travelwhiz.surge.sh"
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001'
+
 
 //API Class
 //Static class tying together methods used to get/send to the API 
@@ -52,6 +53,18 @@ class TravelWhizApi {
     static async saveProfile(username, data) {
         let res = await this.request(`users/${username}`, data, "patch")
         return res.user
+    }
+
+    //Get all pins
+    static async allPins() {
+        let res = await this.request(`pins`, {}, "get")
+        return res.pins
+    }
+
+    //Add Pin
+    static async addPin(data) {
+        let res = await this.request(`pins`, data, "post")
+        return res.savedPin
     }
     
     //Edit Pin

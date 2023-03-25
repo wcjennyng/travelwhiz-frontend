@@ -1,12 +1,10 @@
 import React, { useState, useContext, useCallback } from 'react'
-import ReactMapGL, { Map, Marker, Popup } from "react-map-gl"
-import { Link } from 'react-router-dom'
+import { Map, Marker, Popup } from "react-map-gl"
 import UserContext from '../auth/UserContext'
 
-import 'mapbox-gl/dist/mapbox-gl.css'
+// import 'mapbox-gl/dist/mapbox-gl.css'
 import SignupForm from '../auth/SignupForm';
 import LoginForm from '../auth/LoginForm';
-import NavBar from '../routes/Nav';
 import CircleIcon from '@mui/icons-material/Circle';
 import RoomIcon from '@mui/icons-material/Room';
 import ControlPanel from '../general/ControlPanel';
@@ -108,7 +106,7 @@ const Homepage = ({ signup, login }) => {
                                     <span className="username">
                                         Created by <b>Jenny</b><br />
                                     </span>
-                                    <span className="date" style={{ color: "gray", marginBottom: '4px' }}>1-1-2022 12:00:00</span>
+                                    <span className="date" style={{ color: "gray", marginBottom: '4px' }}>12-25-2022 12:00:00</span>
                                 </div>
                             </Popup>)}
 
@@ -143,7 +141,7 @@ const Homepage = ({ signup, login }) => {
                                     <span className="username">
                                         Created by <b>Paul</b><br />
                                     </span>
-                                    <span className="date" style={{ color: "gray", marginBottom: '4px' }}>02-08-2021 9:59:27</span>
+                                    <span className="date" style={{ color: "gray", marginBottom: '4px' }}>02-08-2022 9:59:27</span>
                                 </div>
                             </Popup>)}
 

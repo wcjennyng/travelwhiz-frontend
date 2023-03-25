@@ -1,5 +1,6 @@
 import React from 'react'
 import './searchBox.css'
+import { HelpOutline } from '@mui/icons-material';
 
 //check box in filter panel
 

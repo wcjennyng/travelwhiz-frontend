@@ -71,11 +71,11 @@ const EditPinForm = ({ filteredPins,
         setFormErrors([])
         setSaveConfirmed(true)
 
-        const allPins = await axios.get("/pins");
+        const allPinsRes = await TravelWhizApi.allPins()
         if (pref.length === 0) {
-            setFilteredPins(allPins.data.pins)
+            setFilteredPins(allPinsRes.data.pins)
         } else {
-            setFilteredPins(allPins.data.pins.filter(pin =>
+            setFilteredPins(allPinsRes.data.pins.filter(pin =>
                 pref.some(val => [pin.rating].flat().includes(val))))
 
         }

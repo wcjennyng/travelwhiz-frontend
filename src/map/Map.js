@@ -15,7 +15,6 @@ import { useAlert } from 'react-alert';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faLocationPin } from '@fortawesome/free-solid-svg-icons'
-import 'mapbox-gl/dist/mapbox-gl.css'
 import {
     Room,
     Circle,
@@ -26,6 +25,7 @@ import {
     ModeEdit,
     FavoriteBorder,
     Favorite,
+    HelpOutline
 } from '@mui/icons-material';
 import { MDBModal } from 'mdb-react-ui-kit';
 import './Map.css'
@@ -55,6 +55,7 @@ const MapSearch = () => {
 
     const alert = useAlert()
 
+    
     const [viewState, setViewState] = useState({
         //default view when routed to page
         latitude: 40.7306,
@@ -115,8 +116,10 @@ const MapSearch = () => {
         }
 
         try {
-            const res = await axios.post("/pins", newPin)
-            setFilteredPins([...filteredPins, res.data.savedPin])
+
+            //const res = await axios.post(`${BASE_URL}/pins`, newPin)
+            const added = await TravelWhizApi.addPin(newPin)
+            setFilteredPins([...filteredPins, added])
             setNewLocation(null)
             alert.success('Added!')
         } catch (err) {
@@ -134,11 +137,13 @@ const MapSearch = () => {
     useEffect(() => {
         const getPins = async () => {
             try {
-                const allPins = await axios.get("/pins");
+                //const allPins = await axios.get("/pins");
+                const allPinsRes = await TravelWhizApi.allPins()
+                console.log(allPinsRes)
                 if (pref.length === 0) {
-                    setFilteredPins(allPins.data.pins)
+                    setFilteredPins(allPinsRes)
                 } else {
-                    setFilteredPins(allPins.data.pins.filter(pin =>
+                    setFilteredPins(allPinsRes.filter(pin =>
                         pref.some(val => [pin.rating].flat().includes(val))))
 
                 }
@@ -154,11 +159,11 @@ const MapSearch = () => {
     const handleDeletePin = async (pinLocationId) => {
         try {
             await TravelWhizApi.deletePin(pinLocationId);
-            const allPins = await axios.get("/pins");
+            const allPinsRes = await TravelWhizApi.allPins()
             if (pref.length === 0) {
-                setFilteredPins(allPins.data.pins)
+                setFilteredPins(allPinsRes)
             } else {
-                setFilteredPins(allPins.data.pins.filter(pin =>
+                setFilteredPins(allPinsRes.filter(pin =>
                     pref.some(val => [pin.rating].flat().includes(val))))
 
             }
@@ -192,7 +197,7 @@ const MapSearch = () => {
         handleFav(id)
         alert.success('Favorited!')
     }
-
+console.log(filteredPins)
 
     return (
         <>
@@ -221,6 +226,7 @@ const MapSearch = () => {
                                     <SearchSelectMove />
                                     <hr style={{ width: '80%', font: '2px' }} />
                                     <Checkbox pins={pins} pref={pref} setPref={setPref} />
+                                    <Tooltip title="Want to add a pin? Double Click on the map!" arrow><HelpOutline className="helpIcon" /></Tooltip>
                                 </div>
                                 <div className="sidebar-toggle rounded-rect left" onClick={setToggleSidebar}>
                                     {toggleSidebar ? <Tooltip title="Collapse" arrow ><ArrowCircleLeft /></Tooltip>
@@ -233,7 +239,7 @@ const MapSearch = () => {
 
 
                     {/* display of pin pop up per user */}
-                    {filteredPins.map((p, index) => (
+                    {filteredPins?.map((p, index) => (
                         <div key={index} >
                             <Marker
                                 latitude={p.lat}

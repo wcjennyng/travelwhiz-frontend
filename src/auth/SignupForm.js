@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Cancel, ContactsOutlined } from '@material-ui/icons'
+import { Cancel } from '@material-ui/icons'
 import { useNavigate } from 'react-router-dom'
 import Alert from '../general/Alert'
 import './SignupForm.css'
