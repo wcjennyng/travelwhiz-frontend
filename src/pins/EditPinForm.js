@@ -73,9 +73,9 @@ const EditPinForm = ({ filteredPins,
 
         const allPinsRes = await TravelWhizApi.allPins()
         if (pref.length === 0) {
-            setFilteredPins(allPinsRes.data.pins)
+            setFilteredPins(allPinsRes)
         } else {
-            setFilteredPins(allPinsRes.data.pins.filter(pin =>
+            setFilteredPins(allPinsRes.filter(pin =>
                 pref.some(val => [pin.rating].flat().includes(val))))
 
         }
